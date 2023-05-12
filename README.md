@@ -1,2 +1,2 @@
-# dumb-nickname-generator
+# DotaLSTM
 best generative ai ever created
