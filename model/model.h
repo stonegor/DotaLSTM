@@ -10,14 +10,15 @@
 
 class GenerativeModel{
     torch::jit::script::Module model;
-    std::unordered_map<char, int> charToInt;
-    std::string allowedChars = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя1234567890.-_()?";
+    std::unordered_map<wchar_t, int> charToInt;
+    std::wstring allowedChars = L"абвгдеёжзийклмнопрстуфхцчшщъыьэюя1234567890.-_()? ";
 private:
-    torch::Tensor encode(std::string prompt);
-    std::string decode(torch::Tensor);
+    torch::Tensor encode(const std::wstring &prompt);
+    std::wstring decode(const torch::Tensor &embedding);
 public:
+    friend int main();
     GenerativeModel();
-    std::string generateNickname(std::string prompt = "");
+    std::wstring generateNickname(const std::wstring &prompt = L"");
 
 
 };

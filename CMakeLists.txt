@@ -8,6 +8,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
 set(CMAKE_CXX_STANDARD 17)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/model/model.pt
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
 set(${project}_HEADERS
         model/model.h)
 
