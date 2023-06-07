@@ -19,8 +19,7 @@ public:
     friend int main();
     GenerativeModel();
     std::wstring generateNickname(const std::wstring &prompt = L"");
-
-
+    std::vector<std::wstring> generateNames(const std::wstring &prompt, float alpha = 0.2, bool noise = true, int k = 10, int split_steps = 5);
 };
 
 
