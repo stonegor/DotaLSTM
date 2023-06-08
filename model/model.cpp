@@ -43,7 +43,7 @@ std::wstring GenerativeModel::generateNickname(const std::wstring &prompt) {
     //return decoded predictions
     return decode(encodedPrompt);
 }
-std::vector<std::wstring> GenerativeModel::generateNames(const std::wstring &prompt, float alpha, bool noise, int k, int split_steps){
+std::vector<std::wstring> GenerativeModel::generateNames(const std::wstring &prompt,float noiseAmount, float alpha, bool noise,  int k, int split_steps){
     // Make encoded name our starting point
     std::vector<torch::Tensor> names = {encode(prompt)};
     torch::Tensor prediction0 = torch::ones(1);
@@ -66,7 +66,7 @@ std::vector<std::wstring> GenerativeModel::generateNames(const std::wstring &pro
                 auto predictioni = std::get<1>(topPredictions)[0][i].reshape({1});
 
                 if (noise){
-                    noise_value = torch::rand({1}) / 3;
+                    noise_value = torch::rand({1}) * noiseAmount;
                 }
 
                 if ((value0/valuei < 1 + alpha + noise_value).item<bool>()){

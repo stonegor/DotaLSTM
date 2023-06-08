@@ -1,0 +1,63 @@
+QWidget#MainWindow {
+    background-color: #1b1b1b;
+    color: #f0f0f0;
+}
+
+QWidget {
+    font-size: 28px;
+    text-align:center;
+}
+
+QSlider::groove:vertical {
+    background: #5e5e5e;
+    border: none;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+QSlider::handle:vertical {
+    height: 20px;
+    border-radius: 5px;
+    margin: 0px;
+    background-color: #4d4d4d;
+}
+
+QSlider::sub-page:vertical {
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+
+QPushButton {
+    background-color: #4d4d4d;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #2b2b2b;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: #5e5e5e;
+}
+
+QLineEdit {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+QLabel {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+

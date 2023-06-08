@@ -16,10 +16,9 @@ private:
     torch::Tensor encode(const std::wstring &prompt);
     std::wstring decode(const torch::Tensor &embedding);
 public:
-    friend int main();
     GenerativeModel();
     std::wstring generateNickname(const std::wstring &prompt = L"");
-    std::vector<std::wstring> generateNames(const std::wstring &prompt, float alpha = 0.2, bool noise = true, int k = 10, int split_steps = 5);
+    std::vector<std::wstring> generateNames(const std::wstring &prompt, float noiseAmount = 1, float alpha = 0.3, bool noise = true,  int k = 10, int split_steps = 6);
 };
 
 
